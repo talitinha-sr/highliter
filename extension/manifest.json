@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Highliter",
+  "version": "1.0.0",
+  "description": "Salve, restaure e organize grifos coloridos em qualquer página.",
+  "permissions": ["storage", "activeTab", "scripting", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Highliter",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
