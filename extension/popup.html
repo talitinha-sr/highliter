@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Highliter</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Highliter</h1>
+      <p>Selecione um texto para criar um grifo com a cor ativa.</p>
+    </header>
+
+    <section class="section">
+      <h2 class="section__title">Cor ativa</h2>
+      <div class="color-picker" id="colorPicker"></div>
+      <p class="helper-text" id="currentColorLabel"></p>
+    </section>
+
+    <section class="section">
+      <div class="section__row">
+        <label for="colorFilter">Filtrar por cor</label>
+        <select id="colorFilter"></select>
+      </div>
+      <div class="action-row">
+        <button id="copyButton" class="action-button">Copiar grifos filtrados</button>
+        <button id="exportButton" class="action-button">Exportar JSON</button>
+        <button id="clearButton" class="action-button action-button--danger">Limpar página</button>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Grifos desta página</h2>
+      <div id="highlightsContainer" class="highlights-container"></div>
+      <p class="empty-state" id="emptyState" hidden>
+        Nenhum grifo cadastrado ainda. Crie um novo selecionando um texto.
+      </p>
+    </section>
+
+    <template id="highlightTemplate">
+      <article class="highlight-item">
+        <header class="highlight-item__header">
+          <span class="highlight-item__badge"></span>
+          <span class="highlight-item__meta"></span>
+        </header>
+        <p class="highlight-item__text"></p>
+        <footer class="highlight-item__footer">
+          <button class="highlight-item__action" data-action="go">Ir ao trecho</button>
+          <button class="highlight-item__action" data-action="copy">Copiar</button>
+          <button class="highlight-item__action highlight-item__action--danger" data-action="remove">Remover</button>
+        </footer>
+      </article>
+    </template>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

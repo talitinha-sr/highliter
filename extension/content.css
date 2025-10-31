@@ -1,0 +1,51 @@
+.highliter-highlight {
+  padding: 0 2px;
+  border-radius: 2px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.highliter-highlight:hover {
+  box-shadow: 0 0 0 2px rgba(33, 33, 33, 0.35);
+}
+
+.highliter-highlight--focused {
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.6);
+  transform: scale(1.01);
+}
+
+.highliter-yellow {
+  background: #fff59d;
+  color: #2d2d2d;
+}
+
+.highliter-green {
+  background: #a5d6a7;
+  color: #1b5e20;
+}
+
+.highliter-blue {
+  background: #90caf9;
+  color: #0d47a1;
+}
+
+.highliter-pink {
+  background: #f48fb1;
+  color: #880e4f;
+}
+
+.highliter-orange {
+  background: #ffcc80;
+  color: #5d4037;
+}
+
+.highliter-highlight[data-highlight-color="yellow"]::selection,
+.highliter-highlight[data-highlight-color="green"]::selection,
+.highliter-highlight[data-highlight-color="blue"]::selection,
+.highliter-highlight[data-highlight-color="pink"]::selection,
+.highliter-highlight[data-highlight-color="orange"]::selection {
+  background: rgba(33, 33, 33, 0.25);
+  color: inherit;
+}
